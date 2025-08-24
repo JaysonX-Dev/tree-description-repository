@@ -1,122 +1,145 @@
 
 ### 🎯 Project Introduction
-**Tree Description - Path Annotation Tool**  
-Add intelligent path annotations to IntelliJ IDEA project tree, helping developers quickly understand project structure and code meaning.
+**Tree Description Repository**  
+Provides rich open source project mapping libraries for Tree Annotations plugin, helping developers quickly understand the structure and naming conventions of various open source projects.
 
-### ✨ Core Features
-- **Smart Annotations**: Add custom path annotations to package names and files
-- **Real-time Display**: Display annotation descriptions in real-time in project tree
-- **Mapping Library**: Pre-built common framework mapping libraries
-- **Auto Matching**: Support filename and package name pattern matching
-- **Internationalization**: Support Chinese and English interface switching
-- **Color Marking**: Support custom annotation colors
-- **Global Search**: Support global annotation search
-  - **Windows**: `Alt + Shift + F`
-  - **Mac**: `Option + Shift + F`
+### ✨ Mapping Library Content
+- **Spring Framework**: Spring Boot, Spring Cloud, Spring Security, etc.
+- **MyBatis**: MyBatis Core, MyBatis Spring, MyBatis Generator
+- **More Frameworks**: Continuously adding...
 
-### 🚀 Use Cases
-- **Learning Large Open Source Projects**: Quickly understand project structure and module responsibilities
-- **Team Collaboration**: Unify project naming conventions and code understanding
-- **Programming Education**: Provide clear project structure explanations for students
-- **Code Review**: Quickly identify file functions and package purposes
-
-###  Installation
-#### 1. Install from JetBrains Marketplace
-- Open `File > Settings > Plugins` in IDEA
-- Search for "Tree Description" and install
-
-#### 2. Manual Installation
-- Download the latest version `.jar` file
-- Open `File > Settings > Plugins` in IDEA
-- Click the gear icon and select "Install Plugin from Disk"
-- Select the downloaded `.jar` file
-
-### 🚀 Quick Start
-1. **Add Annotation**: Right-click file/directory in project tree → "Add Annotation"
-2. **Search Annotations**: Use shortcut `Alt+Shift+F` or menu `Tools > Annotation Tools > Search Project Tree Annotations`
-3. **Manage Mappings**: `Tools > Annotation Tools > View Mapping Library`
-
-### ⚙️ Configuration
-- **Language Switch**: `Tools > Annotation Tools > Language > English/中文`
-- **Enable/Disable**: `Tools > Annotation Tools > Enable Project Tree Annotations`
-- **Mapping Library Management**: Support downloading open source mapping libraries from GitHub
-
-### Project Structure
-```
-src/main/java/com/github/annotations/
-├── actions/          # Menu Actions
-├── services/         # Core Services
-├── ui/              # User Interface
-├── decorators/      # Project Tree Decorators
-├── model/           # Data Models
-└── utils/           # Utility Classes
+### 📁 Mapping Library Structure
+Each mapping library contains the following information:
+```json
+{
+  "name": "Spring Boot Common Mappings",
+  "version": "1.0.0",
+  "description": "Common package names and file mappings for Spring Boot projects",
+  "author": "Open Source Community",
+  "mappings": {
+    "packages": {
+      "dubbo-example/src/main/java/com/example/consumer/controller": "Controller Layer",
+      "dubbo-example/src/main/java/com/example/consumer/service": "Business Logic Layer",
+      "dubbo-example/src/main/java/com/example/consumer/repository": "Data Access Layer"
+    },
+    "files": {
+      "dubbo-example/src/main/java/com/example/consumer/Application.java": "Main Startup Class",
+      "dubbo-example/pom.xml": "Maven Configuration File"
+    },
+    "packageMatch": {
+      "com.example.controller": "Controller Layer",
+      "com.example.service": "Business Logic Layer",
+      "com.example.repository": "Data Access Layer"
+    },
+    "fileMatch": {
+      "Application.java": "Main Startup Class",
+      "pom.xml": "Maven Configuration File"
+    }
+  }
+}
 ```
 
-### 🤝 Contributing
-Welcome to submit Issues and Pull Requests!
+###  Mapping Rules
+- **Package Mapping**: Exact package path matching
+- **File Mapping**: Exact filename matching
+- **Package Match Pattern**: Support wildcard package name matching
+- **File Match Pattern**: Support wildcard filename matching
 
+### 🤝 Contributing Mapping Libraries
+We welcome community contributions for more framework mapping libraries!
 
-### Support Us
-If this plugin helps you, welcome to give us a ⭐ Star!
+#### Contribution Steps
+1. **Fork this repository**
+2. **Create mapping library file**:
+   - Create `.json` file in the corresponding framework directory
+   - Follow standard mapping format
+   - Add detailed description information
+
+3. **Submit Pull Request**:
+   - Describe the purpose and content of the mapping library
+   - Ensure correct JSON format
+
+#### Mapping Library Naming Conventions
+- Use official framework names
+- Add version number identifiers (e.g., `spring-boot-2.x.json`)
+- Use hyphens to separate words
+
+### 🎯 Quality Requirements
+- **Accuracy**: Mapping content accurately reflects the actual purpose of the framework
+- **Completeness**: Cover main components and common naming of the framework
+- **Standardization**: Follow JSON format specifications
+- **Readability**: Clear and understandable description information
 
 ---
 
 ### 🎯 项目简介
-**Tree Description - 路径备注工具**  
-为 IntelliJ IDEA 项目树添加智能路径备注，帮助开发者快速理解项目结构和代码含义。
+**Tree Description Repository - 开源映射库**  
+为 Tree Annotations 插件提供丰富的开源项目映射库，帮助开发者快速理解各种开源项目的结构和命名规范。
 
-### ✨ 核心功能
-- **智能备注**: 在包名和文件上添加自定义路径备注
-- **实时显示**: 项目树中实时显示备注说明
-- **映射库**: 预置常用框架映射库
-- **自动匹配**: 支持文件名和包名模式匹配
-- **国际化**: 支持中英文界面切换
-- **颜色标记**: 支持自定义备注颜色
-- **全局搜索**: 支持全局搜索备注
-  - **Windows**: `Alt + Shift + F`
-  - **Mac**: `Option + Shift + F`
+### ✨ 映射库内容
+- **Spring Framework**: Spring Boot、Spring Cloud、Spring Security等
+- **MyBatis**: MyBatis Core、MyBatis Spring、MyBatis Generator
+- **更多框架**: 持续添加中...
 
-### 🚀 使用场景
-- **学习大型开源项目**: 快速理解项目结构和模块职责
-- **团队协作**: 统一项目命名规范和代码理解
-- **编程教学**: 为学员提供清晰的项目结构说明
-- **代码审查**: 快速识别文件功能和包的作用
-
-### 🛠️ 安装方式
-#### 1. 从 JetBrains Marketplace 安装
-- 在 IDEA 中打开 `File > Settings > Plugins`
-- 搜索 "Tree Description" 并安装
-
-#### 2. 手动安装
-- 下载最新版本的 `.jar` 文件
-- 在 IDEA 中打开 `File > Settings > Plugins`
-- 点击齿轮图标选择 "Install Plugin from Disk"
-- 选择下载的 `.jar` 文件
-
-### 快速开始
-1. **添加备注**: 右键点击项目树中的文件/目录 → "添加备注"
-2. **搜索备注**: 使用快捷键 `Alt+Shift+F` 或菜单 `Tools > 备注工具 > 搜索项目树备注`
-3. **管理映射**: `Tools > 备注工具 > 查看映射库`
-
-### ⚙️ 配置说明
-- **语言切换**: `Tools > 备注工具 > 语言 > English/中文`
-- **启用/禁用**: `Tools > 备注工具 > 启用项目树备注`
-- **映射库管理**: 支持从GitHub下载开源映射库
-
-### 📁 项目结构
-```
-src/main/java/com/github/annotations/
-├── actions/          # 菜单动作
-├── services/         # 核心服务
-├── ui/              # 用户界面
-├── decorators/      # 项目树装饰器
-├── model/           # 数据模型
-└── utils/           # 工具类
+### 📁 映射库结构
+每个映射库包含以下信息：
+```json
+{
+  "name": "Spring Boot 常用映射",
+  "version": "1.0.0",
+  "description": "Spring Boot 项目常用包名和文件映射",
+  "author": "开源社区",
+  "mappings": {
+    "packages": {
+      "dubbo-example/src/main/java/com/example/consumer/controller": "控制器层",
+      "dubbo-example/src/main/java/com/example/consumer/service": "业务逻辑层",
+      "dubbo-example/src/main/java/com/example/consumer/repository": "数据访问层"
+    },
+    "files": {
+      "dubbo-example/src/main/java/com/example/consumer/Application.java": "主启动类",
+      "dubbo-example/pom.xml": "Maven 配置文件"
+    },
+    "packageMatch": {
+      "com.example.controller": "控制器层",
+      "com.example.service": "业务逻辑层",
+      "com.example.repository": "数据访问层"
+    },
+    "fileMatch": {
+      "Application.java": "主启动类",
+      "pom.xml": "Maven 配置文件"
+    }
+  }
+}
 ```
 
-### 🤝 贡献指南
-欢迎提交 Issue 和 Pull Request！
+###  映射规则说明
+- **包映射**: 精确匹配包路径
+- **文件映射**: 精确匹配文件名
+- **包匹配模式**: 支持通配符匹配包名
+- **文件匹配模式**: 支持通配符匹配文件名
 
-### 🌟 支持我们
-如果这个插件对你有帮助，欢迎给我们一个 ⭐ Star！
+###  贡献映射库
+我们欢迎社区贡献更多框架的映射库！
+
+#### 贡献步骤
+1. **Fork 本仓库**
+2. **创建映射库文件**:
+   - 在对应框架目录下创建 `.json` 文件
+   - 遵循标准映射格式
+   - 添加详细的描述信息
+
+3. **提交 Pull Request**:
+   - 描述映射库的用途和内容
+   - 确保JSON格式正确
+
+#### 映射库命名规范
+- 使用框架的官方名称
+- 添加版本号标识（如：`spring-boot-2.x.json`）
+- 使用连字符分隔单词
+
+###  质量要求
+- **准确性**: 映射内容准确反映框架的实际用途
+- **完整性**: 覆盖框架的主要组件和常用命名
+- **规范性**: 遵循JSON格式规范
+- **可读性**: 描述信息清晰易懂
 
